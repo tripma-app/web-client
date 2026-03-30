@@ -22,6 +22,10 @@
   --success-border: rgba(22, 163, 122, 0.2);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: var(--bg);
   color: var(--text-primary);

@@ -20,6 +20,15 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (href.startsWith("#")) {
+      e.preventDefault();
+      const el = document.querySelector(href);
+      if (el) el.scrollIntoView({ behavior: "smooth" });
+      setMenuOpen(false);
+    }
+  };
+
   return (
     <header
       className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
@@ -32,38 +41,31 @@ export default function Navbar() {
       <div className="max-w-[1100px] mx-auto px-6 h-16 flex items-center justify-between">
 
         <Link href="/" className="flex items-center">
-          <Image
-            src="/name.svg"
-            alt="Tripma"
-            width={0}
-            height={24}
-            className="h-6 w-auto"
-          />
+          <Image src="/name.svg" alt="Tripma" width={0} height={24} className="h-6 w-auto" />
         </Link>
 
         <nav className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
-            <Link
+            <a
               key={link.label}
               href={link.href}
-              className="text-[14px] transition-colors duration-200"
+              onClick={(e) => handleNavClick(e, link.href)}
+              className="text-[14px] transition-colors duration-200 cursor-pointer"
               style={{ color: "var(--text-muted)" }}
               onMouseEnter={e => (e.currentTarget.style.color = "var(--text-primary)")}
               onMouseLeave={e => (e.currentTarget.style.color = "var(--text-muted)")}
             >
               {link.label}
-            </Link>
+            </a>
           ))}
         </nav>
 
         <div className="hidden md:flex items-center">
-          <Link
+          <a
             href="#waitlist"
-            className="flex items-center gap-2 text-[13px] font-medium px-4 py-2 rounded-lg transition-all duration-200 hover:-translate-y-px active:translate-y-0"
-            style={{
-              backgroundColor: "var(--accent)",
-              color: "var(--accent-text)",
-            }}
+            onClick={(e) => handleNavClick(e, "#waitlist")}
+            className="flex items-center gap-2 text-[13px] font-medium px-4 py-2 rounded-lg transition-all duration-200 hover:-translate-y-px active:translate-y-0 cursor-pointer"
+            style={{ backgroundColor: "var(--accent)", color: "var(--accent-text)" }}
             onMouseEnter={e => (e.currentTarget.style.backgroundColor = "var(--accent-hover)")}
             onMouseLeave={e => (e.currentTarget.style.backgroundColor = "var(--accent)")}
           >
@@ -71,7 +73,7 @@ export default function Navbar() {
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M5 12h14M12 5l7 7-7 7" />
             </svg>
-          </Link>
+          </a>
         </div>
 
         <button
@@ -95,27 +97,27 @@ export default function Navbar() {
       >
         <nav className="flex flex-col px-6 py-4 gap-4">
           {navLinks.map((link) => (
-            <Link
+            <a
               key={link.label}
               href={link.href}
-              onClick={() => setMenuOpen(false)}
-              className="text-[15px] transition-colors duration-200"
+              onClick={(e) => handleNavClick(e, link.href)}
+              className="text-[15px] transition-colors duration-200 cursor-pointer"
               style={{ color: "var(--text-muted)" }}
             >
               {link.label}
-            </Link>
+            </a>
           ))}
-          <Link
+          <a
             href="#waitlist"
-            onClick={() => setMenuOpen(false)}
-            className="mt-2 flex items-center justify-center gap-2 text-[14px] font-medium px-4 py-2.5 rounded-lg transition-colors duration-200"
+            onClick={(e) => handleNavClick(e, "#waitlist")}
+            className="mt-2 flex items-center justify-center gap-2 text-[14px] font-medium px-4 py-2.5 rounded-lg transition-colors duration-200 cursor-pointer"
             style={{ backgroundColor: "var(--accent)", color: "var(--accent-text)" }}
           >
             <span>Get early access</span>
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M5 12h14M12 5l7 7-7 7" />
             </svg>
-          </Link>
+          </a>
         </nav>
       </div>
     </header>
