@@ -1,8 +1,30 @@
 @import "tailwindcss";
 
+@theme {
+  --font-sans: var(--font-dm-sans), sans-serif;
+  --font-serif: var(--font-instrument-serif), serif;
+}
+
 :root {
-  --background: #080c14;
-  --foreground: #f0ece4;
+  --bg:             #ffffff;
+  --bg-subtle:      #f7f7f7;
+  --surface:        #f0f0f0;
+  --border:         rgba(0, 0, 0, 0.08);
+  --text-primary:   #0a0a0a;
+  --text-muted:     rgba(0, 0, 0, 0.4);
+  --text-faint:     rgba(0, 0, 0, 0.2);
+  --accent:         #1a6be0;
+  --accent-hover:   #3a84f5;
+  --accent-text:    #ffffff;
+  --glow:           rgba(26, 107, 224, 0.08);
+  --success:        #16a37a;
+  --success-bg:     rgba(22, 163, 122, 0.08);
+  --success-border: rgba(22, 163, 122, 0.2);
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text-primary);
 }
 
 @keyframes hero-up {
