@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 import FeatureCard from "@/components/feature-card";
 import features from "@/data/features.json";
 
@@ -18,10 +19,11 @@ export default function Features() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-16 px-6" style={{ backgroundColor: "var(--bg)" }}>
+    <section id="features" ref={sectionRef} className="py-24 px-6" style={{ backgroundColor: "var(--bg)" }}>
       <div className="max-w-[1100px] mx-auto">
+
         <div
-          className={`text-center max-w-[560px] mx-auto mb-16 transition-all duration-700 ${
+          className={`text-center max-w-[560px] mx-auto mb-12 transition-all duration-700 ${
             visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
           }`}
         >
@@ -33,7 +35,7 @@ export default function Features() {
             style={{ color: "var(--text-primary)" }}
           >
             Everything you need,{" "}
-            <em className="italic" style={{ color: "var(--text-muted)" }}>
+            <em className="italic" style={{ color: "#04CE84" }}>
               nothing you don&apos;t.
             </em>
           </h2>
@@ -42,24 +44,47 @@ export default function Features() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div
+          className={`relative w-full h-[260px] rounded-[16px] overflow-hidden mb-5 transition-all duration-700 delay-200 ${
+            visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+          }`}
+        >
+          <Image
+            src="/features-photo.jpg"
+            alt="Travel together with Tripma"
+            fill
+            sizes="100vw"
+            className="object-cover object-[center_80%]"
+          />
+          <div
+            className="absolute inset-0"
+            style={{ background: "linear-gradient(to right, rgba(0,0,0,0.5) 0%, transparent 60%)" }}
+          />
+          <div className="absolute bottom-7 left-7 max-w-[320px]">
+            <p className="font-serif text-[1.5rem] font-normal leading-[1.2] text-white tracking-[-0.01em]">
+              Every great trip starts with <em className="italic">one good plan.</em>
+            </p>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {features.map((feature, i) => (
             <div
               key={feature.title}
               className={`transition-all duration-500 ${
                 visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
               }`}
-              style={{ transitionDelay: `${i * 80}ms` }}
+              style={{ transitionDelay: `${i * 80 + 300}ms` }}
             >
               <FeatureCard
-                icon={feature.icon}
                 title={feature.title}
                 description={feature.description}
-                index={i}
+                image={feature.image}
               />
             </div>
           ))}
         </div>
+
       </div>
     </section>
   );

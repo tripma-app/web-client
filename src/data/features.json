@@ -1,38 +1,22 @@
 [
   {
-    "icon": "✦",
     "title": "Smart itineraries",
     "description": "Tell Tripma where you want to go and how you like to travel. Get a full day-by-day plan built around you — not a template.",
-    "accent": "#7ec8f5"
+    "image": "/img/itineraries.jpg"
   },
   {
-    "icon": "⟳",
-    "title": "Live flight tracking",
-    "description": "Real-time prices, delays, and alternatives. Tripma watches your flights so you don't have to refresh 40 tabs.",
-    "accent": "#3dd9a4"
-  },
-  {
-    "icon": "◈",
     "title": "Local secrets",
     "description": "Skip the tourist traps. Curated spots from people who actually live there — cafés, viewpoints, hidden beaches.",
-    "accent": "#f5c87e"
+    "image": "/img/local-secrets.jpg"
   },
   {
-    "icon": "⬡",
     "title": "Travel with others",
     "description": "Planning a group trip? Tripma syncs everyone's preferences and finds the overlap. No more 50-message group chats.",
-    "accent": "#c87ef5"
+    "image": "/img/travel-together.jpg"
   },
   {
-    "icon": "◎",
-    "title": "One-tap booking",
-    "description": "Flights, hotels, and experiences — book everything without ever leaving the app. Your whole trip, one place.",
-    "accent": "#f57e7e"
-  },
-  {
-    "icon": "⊞",
     "title": "Offline access",
     "description": "No signal in the mountains? No problem. Your itinerary, maps, and bookings are always available offline.",
-    "accent": "#7ef5c8"
+    "image": "/img/offline.jpg"
   }
 ]

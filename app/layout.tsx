@@ -19,11 +19,32 @@ const instrumentSerif = Instrument_Serif({
 
 export const metadata: Metadata = {
   title: "Tripma App",
-  description: "Your next trip, perfectly planned.",
+  description: "Plan trips together, in real time.",
   icons: {
-    icon: "./logo.svg",
-    shortcut: "./logo.svg",
-    apple: "./logo.svg",
+    icon: "/logo.svg",
+    shortcut: "/logo.svg",
+    apple: "/logo.svg",
+  },
+  openGraph: {
+    title: "Tripma App",
+    description: "Plan trips together, in real time.",
+    url: "https://tripma.app",
+    siteName: "Tripma",
+    images: [
+      {
+        url: "https://tripma.app/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Tripma App",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Tripma App",
+    description: "Plan trips together, in real time.",
+    images: ["https://tripma.app/og-image.png"],
   },
 };
 

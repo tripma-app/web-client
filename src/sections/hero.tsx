@@ -1,53 +1,63 @@
 "use client";
 
-import Image from "next/image";
+import Link from "next/link";
 
 export default function Hero() {
   return (
-    <section
-      className="relative min-h-screen flex items-center overflow-hidden"
-      style={{ backgroundColor: "var(--bg)" }}
-    >
-      {/* Glow */}
-      <div className="absolute top-[-100px] right-[-100px] w-[600px] h-[600px] rounded-full blur-[140px] pointer-events-none z-0" style={{ backgroundColor: "var(--glow)" }} />
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover z-0"
+        src="/hero-bg.mp4"
+      />
 
-      <div className="relative z-10 max-w-[1100px] mx-auto px-6 w-full flex flex-col md:flex-row items-center justify-between gap-12 py-24">
+      <div className="absolute inset-0 z-[1]" style={{ background: "linear-gradient(to bottom, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.55) 60%, rgba(0,0,0,0.75) 100%)" }} />
 
-        {/* Left — hook */}
-        <div className="flex-1 max-w-[520px] animate-hero-up">
-          <h1
-            className="font-serif text-[clamp(2.8rem,5.5vw,5rem)] font-normal leading-[1.08] tracking-[-0.02em] mb-6"
-            style={{ color: "var(--text-primary)" }}
-          >
-            Your next trip,
-            <br />
-            <span className="italic" style={{ color: "var(--accent)" }}>
-              perfectly planned.
-            </span>
-          </h1>
-
-          <p
-            className="text-[clamp(1rem,1.8vw,1.15rem)] font-light leading-relaxed max-w-[420px]"
-            style={{ color: "var(--text-muted)" }}
-          >
-            Tripma turns scattered ideas into seamless journeys — smart itineraries,
-            real-time flights, and local secrets all in one place.
-          </p>
+      <div className="relative z-[2] text-center max-w-[780px] px-6 animate-hero-up">
+        <div className="inline-flex items-center gap-2 bg-white/10 border border-white/15 text-white/70 text-[13px] px-4 py-1.5 rounded-full mb-8 backdrop-blur-sm">
+          <span className="w-[6px] h-[6px] rounded-full bg-[#04CE84] shadow-[0_0_6px_#04CE84] animate-pulse" />
+          Join the waitlist — launching soon
         </div>
 
-        {/* Right — phone mockup */}
-        <div className="flex-1 flex justify-center md:justify-end animate-hero-up" style={{ animationDelay: "0.15s" }}>
-          <div className="relative w-[320px] h-[580px] md:w-[380px] md:h-[680px]">
-            <Image
-              src="/mockup.png"
-              alt="Tripma app mockup"
-              fill
-              className="object-contain drop-shadow-2xl"
-              priority
-            />
-          </div>
-        </div>
+        <h1 className="font-serif text-[clamp(3rem,7vw,6rem)] font-normal leading-[1.05] tracking-[-0.02em] text-white mb-6">
+          Make the travel plan
+          <br />
+          <span className="italic" style={{ color: "#7ec8f5" }}>leave the groupchat.</span>
+        </h1>
 
+        <p className="text-[clamp(1rem,2vw,1.2rem)] font-light text-white/55 leading-relaxed max-w-[520px] mx-auto mb-10">
+          Plan trips together in real time. No more 47-message threads,
+          conflicting Google Docs, or "wait what are we doing again."
+        </p>
+
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+          <Link
+            href="#waitlist"
+            className="flex items-center gap-2 text-[15px] font-medium px-7 py-4 rounded-xl transition-all duration-200 hover:-translate-y-px active:translate-y-0"
+            style={{ backgroundColor: "var(--accent)", color: "var(--accent-text)" }}
+            onMouseEnter={e => (e.currentTarget.style.backgroundColor = "var(--accent-hover)")}
+            onMouseLeave={e => (e.currentTarget.style.backgroundColor = "var(--accent)")}
+          >
+            Join the waitlist
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </Link>
+          <Link
+            href="#features"
+            className="text-[15px] font-light text-white/55 hover:text-white/80 transition-colors duration-200 px-4 py-4"
+          >
+            See features →
+          </Link>
+        </div>
+      </div>
+
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/25 text-[11px] tracking-[0.15em] uppercase z-[2]">
+        <div className="w-px h-10 bg-gradient-to-b from-white/25 to-transparent animate-pulse" />
+        scroll
       </div>
     </section>
   );

@@ -6,7 +6,6 @@ import Image from "next/image";
 
 const navLinks = [
   { label: "Features", href: "#features" },
-  { label: "How it works", href: "#how-it-works" },
   { label: "FAQ", href: "#faq" },
 ];
 
@@ -29,6 +28,14 @@ export default function Navbar() {
     }
   };
 
+  const handleLogoClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const linkColor = scrolled ? "var(--text-muted)" : "rgba(255,255,255,0.85)";
+  const linkHoverColor = scrolled ? "var(--text-primary)" : "rgba(255,255,255,1)";
+
   return (
     <header
       className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
@@ -40,40 +47,44 @@ export default function Navbar() {
     >
       <div className="max-w-[1100px] mx-auto px-6 h-16 flex items-center justify-between">
 
-        <Link href="/" className="flex items-center">
-          <Image src="/name.svg" alt="Tripma" width={0} height={24} className="h-6 w-auto" />
+        <Link href="/" onClick={handleLogoClick} className="flex items-center">
+          <Image
+            src="/name.svg"
+            alt="Tripma"
+            width={120}
+            height={24}
+            loading="eager"
+            className="h-6 w-auto"
+          />
         </Link>
 
-        <nav className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-6">
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.label}
               href={link.href}
               onClick={(e) => handleNavClick(e, link.href)}
-              className="text-[14px] transition-colors duration-200 cursor-pointer"
-              style={{ color: "var(--text-muted)" }}
-              onMouseEnter={e => (e.currentTarget.style.color = "var(--text-primary)")}
-              onMouseLeave={e => (e.currentTarget.style.color = "var(--text-muted)")}
+              className="text-[14px] transition-colors duration-200"
+              style={{ color: linkColor }}
+              onMouseEnter={e => (e.currentTarget.style.color = linkHoverColor)}
+              onMouseLeave={e => (e.currentTarget.style.color = linkColor)}
             >
               {link.label}
-            </a>
+            </Link>
           ))}
-        </nav>
-
-        <div className="hidden md:flex items-center">
-          <a
+          <Link
             href="#waitlist"
             onClick={(e) => handleNavClick(e, "#waitlist")}
-            className="flex items-center gap-2 text-[13px] font-medium px-4 py-2 rounded-lg transition-all duration-200 hover:-translate-y-px active:translate-y-0 cursor-pointer"
+            className="flex items-center gap-2 text-[13px] font-medium px-4 py-2 rounded-lg transition-all duration-200 hover:-translate-y-px active:translate-y-0"
             style={{ backgroundColor: "var(--accent)", color: "var(--accent-text)" }}
             onMouseEnter={e => (e.currentTarget.style.backgroundColor = "var(--accent-hover)")}
             onMouseLeave={e => (e.currentTarget.style.backgroundColor = "var(--accent)")}
           >
-            <span>Get early access</span>
+            <span>Join waitlist</span>
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M5 12h14M12 5l7 7-7 7" />
             </svg>
-          </a>
+          </Link>
         </div>
 
         <button
@@ -81,9 +92,9 @@ export default function Navbar() {
           className="md:hidden flex flex-col gap-[5px] p-1"
           aria-label="Toggle menu"
         >
-          <span className={`block h-px w-5 transition-all duration-300 ${menuOpen ? "rotate-45 translate-y-[6px]" : ""}`} style={{ backgroundColor: "var(--text-primary)" }} />
-          <span className={`block h-px w-5 transition-all duration-300 ${menuOpen ? "opacity-0" : ""}`} style={{ backgroundColor: "var(--text-primary)" }} />
-          <span className={`block h-px w-5 transition-all duration-300 ${menuOpen ? "-rotate-45 -translate-y-[6px]" : ""}`} style={{ backgroundColor: "var(--text-primary)" }} />
+          <span className={`block h-px w-5 transition-all duration-300 ${menuOpen ? "rotate-45 translate-y-[6px]" : ""}`} style={{ backgroundColor: scrolled ? "var(--text-primary)" : "#ffffff" }} />
+          <span className={`block h-px w-5 transition-all duration-300 ${menuOpen ? "opacity-0" : ""}`} style={{ backgroundColor: scrolled ? "var(--text-primary)" : "#ffffff" }} />
+          <span className={`block h-px w-5 transition-all duration-300 ${menuOpen ? "-rotate-45 -translate-y-[6px]" : ""}`} style={{ backgroundColor: scrolled ? "var(--text-primary)" : "#ffffff" }} />
         </button>
       </div>
 
@@ -97,27 +108,27 @@ export default function Navbar() {
       >
         <nav className="flex flex-col px-6 py-4 gap-4">
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.label}
               href={link.href}
               onClick={(e) => handleNavClick(e, link.href)}
-              className="text-[15px] transition-colors duration-200 cursor-pointer"
+              className="text-[15px] transition-colors duration-200"
               style={{ color: "var(--text-muted)" }}
             >
               {link.label}
-            </a>
+            </Link>
           ))}
-          <a
+          <Link
             href="#waitlist"
             onClick={(e) => handleNavClick(e, "#waitlist")}
-            className="mt-2 flex items-center justify-center gap-2 text-[14px] font-medium px-4 py-2.5 rounded-lg transition-colors duration-200 cursor-pointer"
+            className="mt-2 flex items-center justify-center gap-2 text-[14px] font-medium px-4 py-2.5 rounded-lg transition-colors duration-200"
             style={{ backgroundColor: "var(--accent)", color: "var(--accent-text)" }}
           >
-            <span>Get early access</span>
+            <span>Join waitlist</span>
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M5 12h14M12 5l7 7-7 7" />
             </svg>
-          </a>
+          </Link>
         </nav>
       </div>
     </header>
