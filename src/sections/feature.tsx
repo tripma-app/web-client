@@ -34,13 +34,13 @@ export default function Features() {
             className="font-serif text-[clamp(2.2rem,4.5vw,3.5rem)] font-normal leading-[1.1] tracking-[-0.02em] mb-4"
             style={{ color: "var(--text-primary)" }}
           >
-            Everything you need,{" "}
+            Everything a{" "}
             <em className="italic" style={{ color: "#04CE84" }}>
-              nothing you don&apos;t.
+              traveler needs.
             </em>
           </h2>
           <p className="text-[15px] font-light leading-relaxed" style={{ color: "var(--text-muted)" }}>
-            Built for the way people actually travel — spontaneous, social, and always on the move.
+            Built for the way people actually travel — spontaneous, social and always on the move.
           </p>
         </div>
 

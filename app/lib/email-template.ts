@@ -42,10 +42,10 @@ export function waitlistEmailHtml(email: string): string {
                       A word from the founder
                     </p>
                     <p style="margin:0;font-size:16px;font-weight:300;line-height:1.8;color:#444444;">
-                      Hey — I'm Mehdi, the founder of Tripma. I built this because I was tired of the chaos that comes with planning trips with friends. The endless group chats, the Google Docs nobody updates, the "wait what are we doing again." Tripma fixes all of that. I can't wait for you to try it.
+                      Hey 👋 I'm Mehdi, the founder of Tripma. I built this because I was tired of the chaos that comes with planning trips with friends. The endless group chats, the Google Docs nobody updates, the "wait, what are we doing again?" Tripma fixes all of that. I can't wait for you to try it.
                     </p>
                     <p style="margin:20px 0 0;font-size:15px;font-weight:500;color:#161616;">
-                      — Mehdi Ougadi
+                      Mehdi Ougadi
                     </p>
                   </td>
                 </tr>
@@ -77,7 +77,7 @@ export function waitlistEmailHtml(email: string): string {
                       <tr>
                         <td style="padding:10px 0;">
                           <p style="margin:0;font-size:14px;color:#555555;">
-                            <span style="color:#04CE84;margin-right:10px;">03</span> Follow <a href="https://instagram.com/tripma.app" style="color:#1a6be0;text-decoration:none;">@tripma.app</a> for behind the scenes
+                            <span style="color:#04CE84;margin-right:10px;">03</span> Follow <a href="https://instagram.com/tripma.app" style="color:#A253FE;text-decoration:none;">@tripma.app</a> for behind the scenes
                           </p>
                         </td>
                       </tr>
@@ -86,8 +86,8 @@ export function waitlistEmailHtml(email: string): string {
                 </tr>
                 <tr>
                   <td style="padding-top:32px;text-align:center;">
-                    <a href="https://tripma.app" style="display:inline-block;background-color:#1a6be0;color:#ffffff;font-size:14px;font-weight:500;text-decoration:none;padding:14px 36px;border-radius:12px;">
-                      Visit tripma.app →
+                    <a href="https://tripma.app" style="display:inline-block;background-color:#A253FE;color:#ffffff;font-size:14px;font-weight:500;text-decoration:none;padding:14px 36px;border-radius:12px;">
+                      Visit tripma.app
                     </a>
                   </td>
                 </tr>
@@ -101,7 +101,7 @@ export function waitlistEmailHtml(email: string): string {
                 You're receiving this because you signed up at tripma.app
               </p>
               <p style="margin:0;font-size:12px;color:#aaaaaa;">
-                Questions? <a href="mailto:support@tripma.app" style="color:#1a6be0;text-decoration:none;">support@tripma.app</a>
+                Questions? <a href="mailto:support@tripma.app" style="color:#A253FE;text-decoration:none;">support@tripma.app</a>
               </p>
             </td>
           </tr>

@@ -1,22 +1,22 @@
 [
   {
-    "title": "Smart itineraries",
-    "description": "Tell Tripma where you want to go and how you like to travel. Get a full day-by-day plan built around you — not a template.",
-    "image": "/img/itineraries.jpg"
+    "title": "Real-time collaboration",
+    "description": "Plan trips with your crew like a shared canvas. Everyone edits, adds, and reacts at the same time. No more waiting, no more chaos.",
+    "image": "/img/collab.jpg"
   },
   {
-    "title": "Local secrets",
-    "description": "Skip the tourist traps. Curated spots from people who actually live there — cafés, viewpoints, hidden beaches.",
-    "image": "/img/local-secrets.jpg"
+    "title": "Discover public trips",
+    "description": "Browse trips built by travelers around the world. Get inspired, clone any itinerary, and make it your own in seconds.",
+    "image": "/img/discover.jpg"
   },
   {
-    "title": "Travel with others",
-    "description": "Planning a group trip? Tripma syncs everyone's preferences and finds the overlap. No more 50-message group chats.",
-    "image": "/img/travel-together.jpg"
+    "title": "AI trip generator",
+    "description": "Describe your dream trip and let Tripma build it for you. A full itinerary created instantly, ready for you to customize.",
+    "image": "/img/ai.jpg"
   },
   {
     "title": "Offline access",
-    "description": "No signal in the mountains? No problem. Your itinerary, maps, and bookings are always available offline.",
+    "description": "No signal in the mountains? No problem. Your itinerary, maps, and plans are always available offline on any plan.",
     "image": "/img/offline.jpg"
   }
 ]

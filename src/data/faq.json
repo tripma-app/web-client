@@ -1,11 +1,11 @@
 [
   {
     "question": "What is Tripma?",
-    "answer": "Tripma is a travel planning app that turns your ideas into fully organized itineraries — with real-time collaboration, local recommendations, and group trip coordination all in one place."
+    "answer": "Tripma is a travel planning app where you can build trips in real time with friends, discover public itineraries from other travelers and clone them to make your own."
   },
   {
     "question": "When will Tripma launch?",
-    "answer": "We're putting the finishing touches on the app. Join the waitlist and you'll be among the first to get access the moment we go live."
+    "answer": "We are putting the finishing touches on the app. Join the waitlist and you will be among the first to get access the moment we go live."
   },
   {
     "question": "What platforms will Tripma be available on?",
@@ -13,18 +13,18 @@
   },
   {
     "question": "Is Tripma free to use?",
-    "answer": "Yes — Tripma has a free tier to get you started. For those who travel more or with bigger groups, we offer two paid plans: Premium and Nomad. The main difference between plans is the number of trips you can create and the number of collaborators you can invite."
+    "answer": "Yes. Tripma has a free tier to get you started. For those who travel more or with bigger groups, we offer two paid plans: Premium and Nomad. The main difference between plans is the number of trips you can create and the number of collaborators you can invite."
   },
   {
-    "question": "What's the difference between Premium and Nomad?",
+    "question": "What is the difference between Premium and Nomad?",
     "answer": "Both paid plans unlock more trips and more collaborators than the free tier. Nomad is built for frequent travelers and larger groups, giving you the highest limits on both."
   },
   {
     "question": "Can I plan trips with friends?",
-    "answer": "Absolutely. Tripma lets you invite travel companions and co-plan itineraries in real time — no more back-and-forth in group chats. The number of collaborators per trip depends on your plan."
+    "answer": "Absolutely. Tripma lets you invite travel companions and co-plan itineraries in real time. The number of collaborators per trip depends on your plan."
   },
   {
     "question": "Does Tripma work offline?",
-    "answer": "Yes. Your itineraries, maps, and booking details are fully accessible offline on all plans — so you're never stuck without your plans in a no-signal zone."
+    "answer": "Yes. Your itineraries, maps and plans are fully accessible offline on all plans so you are never stuck without your plans in a no-signal zone."
   }
 ]

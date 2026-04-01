@@ -73,7 +73,7 @@ export default function Waitlist() {
   return (
     <section
       id="waitlist"
-      className="relative min-h-screen flex items-center px-6 overflow-hidden"
+      className="relative min-h-screen flex items-center px-6 py-24 overflow-hidden"
       style={{ backgroundColor: "var(--bg)" }}
     >
       <div
@@ -89,15 +89,15 @@ export default function Waitlist() {
 
         <div className="flex-1 text-center md:text-left">
           {count !== null && (
-            <div className="mb-6">
+            <div className="mb-8">
               <p
                 className="font-serif text-[clamp(4rem,10vw,7rem)] font-normal leading-none tracking-[-0.03em]"
                 style={{ color: "var(--text-primary)" }}
               >
                 {displayed.toLocaleString()}
               </p>
-              <p className="text-[15px] font-light mt-2" style={{ color: "var(--text-muted)" }}>
-                {count === 1 ? "person" : "people"} already waiting
+              <p className="text-[18px] font-medium mt-3" style={{ color: "var(--text-primary)" }}>
+                {count === 1 ? "person" : "people"} on the waitlist
               </p>
             </div>
           )}
@@ -106,16 +106,16 @@ export default function Waitlist() {
             className="font-serif text-[clamp(2rem,4vw,3rem)] font-normal leading-[1.1] tracking-[-0.02em] mb-4"
             style={{ color: "var(--text-primary)" }}
           >
-            Be the first to
+            Secure your spot
             <br />
             <span className="italic" style={{ color: "var(--accent)" }}>
-              explore Tripma.
+              before launch.
             </span>
           </h2>
 
           <p className="text-[15px] font-light leading-relaxed max-w-[380px]" style={{ color: "var(--text-muted)" }}>
-            We&apos;re putting the finishing touches on something special.
-            Drop your email and we&apos;ll reach out the moment we launch.
+            We are putting the finishing touches on something special.
+            Drop your email and we will reach out the moment we launch.
           </p>
         </div>
 
@@ -184,7 +184,7 @@ export default function Waitlist() {
                 }}
               >
                 <span className="text-lg">✓</span>
-                You&apos;re on the list! We&apos;ll be in touch soon.
+                You are on the list! We will be in touch soon.
               </div>
             )}
 

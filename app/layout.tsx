@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { DM_Sans, Instrument_Serif } from "next/font/google";
+import { DM_Sans, Fraunces } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
@@ -10,11 +10,11 @@ const dmSans = DM_Sans({
   variable: "--font-dm-sans",
 });
 
-const instrumentSerif = Instrument_Serif({
+const fraunces = Fraunces({
   subsets: ["latin"],
-  weight: ["400"],
+  weight: ["300", "400", "700"],
   style: ["normal", "italic"],
-  variable: "--font-instrument-serif",
+  variable: "--font-fraunces",
 });
 
 export const metadata: Metadata = {
@@ -54,8 +54,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${dmSans.variable} ${instrumentSerif.variable}`}>
-      <body className="bg-[#080c14] text-[#f0ece4] antialiased">
+    <html lang="en" className={`${dmSans.variable} ${fraunces.variable}`}>
+      <body className="antialiased">
         <Navbar />
         {children}
         <Footer />

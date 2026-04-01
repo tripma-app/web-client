@@ -2,7 +2,7 @@
 
 @theme {
   --font-sans: var(--font-dm-sans), sans-serif;
-  --font-serif: var(--font-instrument-serif), serif;
+  --font-serif: var(--font-fraunces), serif;
 }
 
 :root {
@@ -13,8 +13,8 @@
   --text-primary:   #0a0a0a;
   --text-muted:     rgba(0, 0, 0, 0.4);
   --text-faint:     rgba(0, 0, 0, 0.2);
-  --accent:         #1a6be0;
-  --accent-hover:   #3a84f5;
+  --accent:         #A253FE;
+  --accent-hover:   #3fceff;
   --accent-text:    #ffffff;
   --glow:           rgba(26, 107, 224, 0.08);
   --success:        #16a37a;
@@ -23,10 +23,12 @@
 }
 
 html {
+  height: -webkit-fill-available;
   scroll-behavior: smooth;
 }
 
 body {
+  min-height: -webkit-fill-available;
   background-color: var(--bg);
   color: var(--text-primary);
 }

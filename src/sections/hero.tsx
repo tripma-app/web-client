@@ -1,10 +1,24 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import Link from "next/link";
 
 export default function Hero() {
+  const [atTop, setAtTop] = useState(true);
+
+  useEffect(() => {
+    const onScroll = () => setAtTop(window.scrollY < 50);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
+    e.preventDefault();
+    document.querySelector(id)?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-[100svh] flex items-center justify-center overflow-hidden">
       <video
         autoPlay
         muted
@@ -22,20 +36,20 @@ export default function Hero() {
           Join the waitlist — launching soon
         </div>
 
-        <h1 className="font-serif text-[clamp(3rem,7vw,6rem)] font-normal leading-[1.05] tracking-[-0.02em] text-white mb-6">
-          Make the travel plan
+        <h1 className="font-serif text-[clamp(2.2rem,5vw,4.5rem)] font-normal leading-[1.05] tracking-[-0.02em] text-white mb-6">
+          Plan. Collaborate.
           <br />
-          <span className="italic" style={{ color: "#7ec8f5" }}>leave the groupchat.</span>
+          <span className="italic" style={{ color: "#04CE84" }}>Explore.</span>
         </h1>
 
         <p className="text-[clamp(1rem,2vw,1.2rem)] font-light text-white/55 leading-relaxed max-w-[520px] mx-auto mb-10">
-          Plan trips together in real time. No more 47-message threads,
-          conflicting Google Docs, or "wait what are we doing again."
+          Build trips together in real time. Discover what others created. Make it yours.
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
           <Link
             href="#waitlist"
+            onClick={(e) => handleScroll(e, "#waitlist")}
             className="flex items-center gap-2 text-[15px] font-medium px-7 py-4 rounded-xl transition-all duration-200 hover:-translate-y-px active:translate-y-0"
             style={{ backgroundColor: "var(--accent)", color: "var(--accent-text)" }}
             onMouseEnter={e => (e.currentTarget.style.backgroundColor = "var(--accent-hover)")}
@@ -48,6 +62,7 @@ export default function Hero() {
           </Link>
           <Link
             href="#features"
+            onClick={(e) => handleScroll(e, "#features")}
             className="text-[15px] font-light text-white/55 hover:text-white/80 transition-colors duration-200 px-4 py-4"
           >
             See features →
@@ -55,7 +70,11 @@ export default function Hero() {
         </div>
       </div>
 
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/25 text-[11px] tracking-[0.15em] uppercase z-[2]">
+      <div
+        className={`absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/25 text-[11px] tracking-[0.15em] uppercase z-[2] transition-opacity duration-500 ${
+          atTop ? "opacity-100" : "opacity-0 pointer-events-none"
+        }`}
+      >
         <div className="w-px h-10 bg-gradient-to-b from-white/25 to-transparent animate-pulse" />
         scroll
       </div>

@@ -23,7 +23,7 @@ export default function FAQ() {
           >
             Got questions?
             <br />
-            <em className="italic" style={{ color: "var(--text-muted)" }}>We got answers.</em>
+            <em className="italic" style={{ color: "#04CE84" }}>We got answers.</em>
           </h2>
         </div>
 
