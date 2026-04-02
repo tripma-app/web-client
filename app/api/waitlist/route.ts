@@ -17,7 +17,8 @@ const transporter = nodemailer.createTransport({
 
 export async function POST(req: NextRequest) {
   try {
-    const { email } = await req.json();
+    const rawEmail = await req.json().then((d) => d.email);
+    const email = rawEmail?.toLowerCase().trim();
 
     if (!email || !email.includes("@")) {
       return NextResponse.json({ message: "Invalid email." }, { status: 400 });
