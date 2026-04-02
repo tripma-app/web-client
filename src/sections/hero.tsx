@@ -51,9 +51,9 @@ export default function Hero() {
             href="#waitlist"
             onClick={(e) => handleScroll(e, "#waitlist")}
             className="flex items-center gap-2 text-[15px] font-medium px-7 py-4 rounded-xl transition-all duration-200 hover:-translate-y-px active:translate-y-0"
-            style={{ backgroundColor: "var(--accent)", color: "var(--accent-text)" }}
-            onMouseEnter={e => (e.currentTarget.style.backgroundColor = "var(--accent-hover)")}
-            onMouseLeave={e => (e.currentTarget.style.backgroundColor = "var(--accent)")}
+            style={{ backgroundColor: "#04CE84", color: "#ffffff" }}
+            onMouseEnter={e => (e.currentTarget.style.backgroundColor = "#03b872")}
+            onMouseLeave={e => (e.currentTarget.style.backgroundColor = "#04CE84")}
           >
             Join the waitlist
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">

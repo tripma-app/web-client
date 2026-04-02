@@ -33,16 +33,17 @@ export default function Navbar() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  const linkColor = scrolled ? "var(--text-muted)" : "rgba(255,255,255,0.85)";
-  const linkHoverColor = scrolled ? "var(--text-primary)" : "rgba(255,255,255,1)";
+  const isLight = scrolled || menuOpen;
+  const linkColor = isLight ? "var(--text-muted)" : "rgba(255,255,255,0.85)";
+  const linkHoverColor = isLight ? "var(--text-primary)" : "rgba(255,255,255,1)";
 
   return (
     <header
       className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
       style={{
-        backgroundColor: scrolled ? "rgba(255,255,255,0.85)" : "transparent",
-        backdropFilter: scrolled ? "blur(12px)" : "none",
-        borderBottom: scrolled ? "1px solid var(--border)" : "1px solid transparent",
+        backgroundColor: isLight ? "rgba(255,255,255,0.97)" : "transparent",
+        backdropFilter: isLight ? "blur(12px)" : "none",
+        borderBottom: isLight && !menuOpen ? "1px solid var(--border)" : "1px solid transparent",
       }}
     >
       <div className="max-w-[1100px] mx-auto px-6 h-16 flex items-center justify-between">
@@ -76,9 +77,9 @@ export default function Navbar() {
             href="#waitlist"
             onClick={(e) => handleNavClick(e, "#waitlist")}
             className="flex items-center gap-2 text-[13px] font-medium px-4 py-2 rounded-lg transition-all duration-200 hover:-translate-y-px active:translate-y-0"
-            style={{ backgroundColor: "var(--accent)", color: "var(--accent-text)" }}
-            onMouseEnter={e => (e.currentTarget.style.backgroundColor = "var(--accent-hover)")}
-            onMouseLeave={e => (e.currentTarget.style.backgroundColor = "var(--accent)")}
+            style={{ backgroundColor: "#04CE84", color: "#ffffff" }}
+            onMouseEnter={e => (e.currentTarget.style.backgroundColor = "#03b872")}
+            onMouseLeave={e => (e.currentTarget.style.backgroundColor = "#04CE84")}
           >
             <span>Join waitlist</span>
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -92,43 +93,52 @@ export default function Navbar() {
           className="md:hidden flex flex-col gap-[5px] p-1"
           aria-label="Toggle menu"
         >
-          <span className={`block h-px w-5 transition-all duration-300 ${menuOpen ? "rotate-45 translate-y-[6px]" : ""}`} style={{ backgroundColor: scrolled ? "var(--text-primary)" : "#ffffff" }} />
-          <span className={`block h-px w-5 transition-all duration-300 ${menuOpen ? "opacity-0" : ""}`} style={{ backgroundColor: scrolled ? "var(--text-primary)" : "#ffffff" }} />
-          <span className={`block h-px w-5 transition-all duration-300 ${menuOpen ? "-rotate-45 -translate-y-[6px]" : ""}`} style={{ backgroundColor: scrolled ? "var(--text-primary)" : "#ffffff" }} />
+          <span className={`block h-px w-5 transition-all duration-300 ${menuOpen ? "rotate-45 translate-y-[6px]" : ""}`} style={{ backgroundColor: isLight ? "var(--text-primary)" : "#ffffff" }} />
+          <span className={`block h-px w-5 transition-all duration-300 ${menuOpen ? "opacity-0" : ""}`} style={{ backgroundColor: isLight ? "var(--text-primary)" : "#ffffff" }} />
+          <span className={`block h-px w-5 transition-all duration-300 ${menuOpen ? "-rotate-45 -translate-y-[6px]" : ""}`} style={{ backgroundColor: isLight ? "var(--text-primary)" : "#ffffff" }} />
         </button>
       </div>
 
       <div
-        className={`md:hidden overflow-hidden transition-all duration-300 ${menuOpen ? "max-h-64" : "max-h-0"}`}
+        className={`md:hidden overflow-hidden transition-all duration-300 ${menuOpen ? "max-h-72" : "max-h-0"}`}
         style={{
-          backgroundColor: "rgba(255,255,255,0.95)",
-          backdropFilter: "blur(12px)",
+          backgroundColor: "transparent",
           borderBottom: menuOpen ? "1px solid var(--border)" : "none",
         }}
       >
-        <nav className="flex flex-col px-6 py-4 gap-4">
+        <nav className="flex flex-col px-6 py-3">
           {navLinks.map((link) => (
             <Link
               key={link.label}
               href={link.href}
               onClick={(e) => handleNavClick(e, link.href)}
-              className="text-[15px] transition-colors duration-200"
-              style={{ color: "var(--text-muted)" }}
+              className="flex items-center justify-between py-4 text-[17px] font-medium transition-colors duration-200 active:opacity-60"
+              style={{
+                color: "var(--text-primary)",
+                borderBottom: "1px solid var(--border)",
+              }}
             >
               {link.label}
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ color: "var(--text-muted)" }}>
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
             </Link>
           ))}
-          <Link
-            href="#waitlist"
-            onClick={(e) => handleNavClick(e, "#waitlist")}
-            className="mt-2 flex items-center justify-center gap-2 text-[14px] font-medium px-4 py-2.5 rounded-lg transition-colors duration-200"
-            style={{ backgroundColor: "var(--accent)", color: "var(--accent-text)" }}
-          >
-            <span>Join waitlist</span>
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M5 12h14M12 5l7 7-7 7" />
-            </svg>
-          </Link>
+          <div className="pt-4 pb-2">
+            <Link
+              href="#waitlist"
+              onClick={(e) => handleNavClick(e, "#waitlist")}
+              className="flex items-center justify-center gap-2 w-full text-[15px] font-medium px-4 py-3.5 rounded-xl transition-colors duration-200"
+              style={{ backgroundColor: "#04CE84", color: "#ffffff" }}
+              onMouseEnter={e => (e.currentTarget.style.backgroundColor = "#03b872")}
+              onMouseLeave={e => (e.currentTarget.style.backgroundColor = "#04CE84")}
+            >
+              <span>Join waitlist</span>
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </Link>
+          </div>
         </nav>
       </div>
     </header>

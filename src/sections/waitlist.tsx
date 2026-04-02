@@ -108,7 +108,7 @@ export default function Waitlist() {
           >
             Secure your spot
             <br />
-            <span className="italic" style={{ color: "var(--accent)" }}>
+            <span className="italic" style={{ color: "#04CE84" }}>
               before launch.
             </span>
           </h2>
@@ -167,9 +167,9 @@ export default function Waitlist() {
                   onClick={handleSubmit as never}
                   disabled={status === "loading" || !email.trim()}
                   className="w-full rounded-xl text-[15px] font-medium px-6 py-[14px] cursor-pointer transition-all hover:-translate-y-px active:translate-y-0 disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:translate-y-0"
-                  style={{ backgroundColor: "var(--accent)", color: "var(--accent-text)" }}
-                  onMouseEnter={e => (e.currentTarget.style.backgroundColor = "var(--accent-hover)")}
-                  onMouseLeave={e => (e.currentTarget.style.backgroundColor = "var(--accent)")}
+                  style={{ backgroundColor: "#04CE84", color: "#ffffff" }}
+                  onMouseEnter={e => (e.currentTarget.style.backgroundColor = "#03b872")}
+                  onMouseLeave={e => (e.currentTarget.style.backgroundColor = "#04CE84")}
                 >
                   {status === "loading" ? "Joining..." : "Notify me"}
                 </button>

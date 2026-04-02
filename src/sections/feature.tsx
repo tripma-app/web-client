@@ -60,8 +60,11 @@ export default function Features() {
             className="absolute inset-0"
             style={{ background: "linear-gradient(to right, rgba(0,0,0,0.5) 0%, transparent 60%)" }}
           />
-          <div className="absolute bottom-7 left-7 max-w-[320px]">
-            <p className="font-serif text-[1.5rem] font-normal leading-[1.2] text-white tracking-[-0.01em]">
+          <div className="absolute bottom-7 left-7 top-7 sm:top-auto flex items-start sm:items-end max-w-[320px]">
+            <p
+              className="font-serif text-[1.5rem] font-normal leading-[1.2] text-white tracking-[-0.01em]"
+              style={{ textShadow: "0 2px 12px rgba(0,0,0,0.5)" }}
+            >
               Every great trip starts with <em className="italic">one good plan.</em>
             </p>
           </div>

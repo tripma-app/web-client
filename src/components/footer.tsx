@@ -8,7 +8,7 @@ export default function Footer() {
         <p className="text-[12px]" style={{ color: "var(--text-primary)" }}>
           © 2026 Tripma
         </p>
-        <div className="flex items-center gap-5">
+        <div className="flex items-center gap-3">
           <Link
             href="https://instagram.com/tripma.app"
             target="_blank"
@@ -16,7 +16,7 @@ export default function Footer() {
             aria-label="Instagram"
             className="transition-opacity duration-200 hover:opacity-60"
           >
-            <Image src="/icons/instagram.svg" alt="Instagram" width={28} height={28} />
+            <Image src="/icons/instagram.svg" alt="Instagram" width={24} height={24} />
           </Link>
           <Link
             href="https://linkedin.com/company/tripmaapp"
